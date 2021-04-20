@@ -3,13 +3,13 @@ global		_ft_strlen
 
 _ft_strlen:
 	mov		rax, 0
-	jmp		count
+	jmp		increment
 
-count:
-	cmp		BYTE [rdi + rax]
+increment:
+	cmp		BYTE [rdi + rax], 0
 	je		exit
 	inc		rax
-	jmp		count
+	jmp		increment
 
 exit:
 	ret
